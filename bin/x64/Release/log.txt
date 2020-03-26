@@ -1,0 +1,2 @@
+[03-03-2020 23:59:50] An error occurred during local report processing.[04-03-2020 0:03:50] The report data source object must be of the type System.Data.DataTable, System.Collections.IEnumerable, or System.Web.UI.IDataSource.[04-03-2020 0:04:22] El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index

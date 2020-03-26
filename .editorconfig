@@ -1,0 +1,7 @@
+﻿[*.vb]
+
+# CA1303: No pasar cadenas literal como parámetros localizados
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1031: Do not catch general exception types
+dotnet_diagnostic.CA1031.severity = none

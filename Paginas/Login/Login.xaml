@@ -1,0 +1,29 @@
+﻿<Page x:Class="Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RestPOS"
+      mc:Ignorable="d" 
+      d:DesignHeight="710" d:DesignWidth="1358"
+      Title="Login">
+    <Page.Resources>
+        <ResourceDictionary x:Name="Recursos" Source="/assets/icons.xaml"/>
+    </Page.Resources>
+    <Grid Background="{DynamicResource BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="{DynamicResource SimpleLogo}" Width="150" VerticalAlignment="Top" Margin="604,20,604,0"></Image>
+        <ScrollViewer HorizontalAlignment="Stretch" Margin="100,155,100,55" Height="500" ScrollViewer.VerticalScrollBarVisibility="Auto"  VerticalAlignment="Center" Grid.RowSpan="2">
+            <UniformGrid x:Name="Cards" VerticalAlignment="Center" Rows="3" Columns="6">
+            </UniformGrid>
+        </ScrollViewer>
+        <Grid Grid.Row="1">
+            <emoji:TextBlock Text="Hecho con ❤ Por Alex Carcamo para Simple Fast Food 🍕🍔" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource LightColor}"/> 
+        </Grid>
+    </Grid>
+</Page>

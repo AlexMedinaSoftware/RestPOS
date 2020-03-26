@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="main" EntityNamespace="MainContext" ContextNamespace="MainContext" Class="MainDataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="8eaf83e6-fbab-4786-824a-af859e43ea4a" Provider="Devart.Data.SQLite.Linq.Provider.SQLiteDataProvider, Devart.Data.SQLite.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=C:\Users\AlexMedina\source\repos\RestPOS\RestPOS\bin\x64\Debug\pos.db" Provider="Devart.Data.SQLite" />
+  <Table Name="&quot;main&quot;.items" Member="Items">
+    <Type Name="Item" ed:Guid="2fea01d4-70ec-4954-9d1c-54e042fe8d50">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="0c8c0efd-16c4-4d65-963a-b572961bc897" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f4cf3425-b4fd-448e-af9e-dd9b9e799ecc" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="15f9db57-9dfa-49ef-9556-e99784701673" />
+      <Column Name="sellPrice" Member="SellPrice" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="aee57091-68a2-4d6a-9b35-21e3ea23451e" />
+      <Column Name="buyPrice" Member="BuyPrice" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8e433c58-cb73-47d6-a145-09279d3c72cc" />
+      <Column Name="categoryId" Member="CategoryId" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="093d8036-e6ed-4ff2-a06e-e67c7b146b27" />
+      <Column Name="barcode" Member="Barcode" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="14f6eed5-1a73-4b49-9e92-60810e3f4579" />
+      <Column Name="sortOrder" Member="SortOrder" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="33eca33f-5ff1-4498-8cd7-5d1f4e2bdbf8" />
+      <Column Name="stockAmount" Member="StockAmount" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4be4de79-4aff-44c7-bdde-98fdb3955a73" />
+      <Column Name="tag" Member="Tag" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e9e420f6-9f94-4ca8-a84b-c533c72f8e18" />
+      <Column Name="btnColor" Member="BtnColor" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="49a0ebbb-1dbf-4dbb-bc69-e524b2774fbd" />
+      <Column Name="lblColor" Member="LblColor" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4c69e720-33c3-4fd8-ad33-68b58ba147cb" />
+      <Column Name="visible" Member="Visible" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="38215c22-b2b6-43bf-a486-e743b3837aa1" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.categories" Member="Categories">
+    <Type Name="Category" ed:Guid="018147ff-016f-4d5e-b7c0-0cdd58982e52">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="e4856c3a-01a1-45f3-92f5-db710bd9443e" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0fbf95a7-f5be-4b52-b471-d1f35a4c570e" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9cac2ac5-9705-4045-8a7f-1d9609d90801" />
+      <Column Name="sortOrder" Member="SortOrder" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a25c1027-63a5-4c2e-a421-1597fdcb2b0a" />
+      <Column Name="tag" Member="Tag" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="707de4bb-68c5-4a41-8198-615dae6f7f4e" />
+      <Column Name="btnColor" Member="BtnColor" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="6e51b3b3-006d-48b7-9ca1-3387d2ab2cd3" />
+      <Column Name="lblColor" Member="LblColor" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="078a4f83-25bb-4da8-a657-42a185e629d7" />
+      <Column Name="icon" Member="Icon" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="5bcfd307-943f-4af4-9829-9f208096c65d" />
+      <Column Name="visible" Member="Visible" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0a578428-36aa-4127-a019-d59c915d05e9" />
+      <Column Name="isLiquid" Member="IsLiquid" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0a8c40f9-2087-4051-afab-e735a768284b" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.tickets_items" Member="TicketsItems">
+    <Type Name="TicketsItem" ed:Guid="fe6da57b-3190-46cb-9924-0a06e75d399a">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="a66cea6e-eaa8-4799-a1c0-13dad32047de" />
+      <Column Name="ticketId" Member="TicketId" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f1331208-a95e-49ad-b83d-f46b2a7680a4" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8b339cd5-9d9b-4f0d-ac1b-205a5cb3451f" />
+      <Column Name="price" Member="Price" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="cb8a90dc-2d84-44f6-842e-84cc70f00d15" />
+      <Column Name="count" Member="Count" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e2fbec8c-d355-4006-9f56-b3566f470728" />
+      <Column Name="isSended" Member="IsSended" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="aef73ad5-04b2-4468-b296-90ed19b7b5c3" />
+      <Column Name="sectorId" Member="SectorId" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3e74c494-6c99-49d1-844d-f120ed6b268e" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.sector" Member="Sectors">
+    <Type Name="Sector" ed:Guid="777e98c7-7889-4ab8-a2e0-f54b50cb999c">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="eb1b4cfe-1d1e-4daf-b445-7411ce5918c5" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="ebe47372-582f-4daa-964a-88dfa0f25810" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="03566baa-5404-4386-a227-237c956ea4d9" />
+      <Column Name="isReceipt" Member="IsReceipt" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2c4b3c37-6ef4-4cae-a569-6fe8aab5b459" />
+      <Column Name="printerName" Member="PrinterName" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d8c4ed35-afa9-412e-8953-598fbabf2790" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.modifiers" Member="Modifiers">
+    <Type Name="Modifier" ed:Guid="1aa25bc6-4e37-43f9-b2b0-7cfed3ddd7e3">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="cc5317bf-eefc-44db-b662-a8db5d021897" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="6ca6859f-c9df-4c12-8679-ecd4fd25618f" />
+      <Column Name="price" Member="Price" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2b76caa9-101f-4471-bf30-82b667788dca" />
+      <Column Name="categoryId" Member="CategoryId" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="00b2514b-2f86-4580-8658-26de6913e544" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.tickets" Member="Tickets">
+    <Type Name="Ticket" ed:Guid="88075bfd-7e24-40ad-baeb-69093a1c1a91">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="64069ec3-d02c-4275-b801-07916f16bcc8" />
+      <Column Name="openTime" Member="OpenTime" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="bd3cd22d-9828-406e-9a7b-72a9184984a0" />
+      <Column Name="closeTime" Member="CloseTime" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="03932d16-abc8-465b-af02-cd4cca74f5f6" />
+      <Column Name="isOpen" Member="IsOpen" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="894fa917-2804-4eab-9514-6d20b2a39c63" />
+      <Column Name="tableId" Member="TableId" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f7161966-6438-4628-a44d-d11d11c215fa" />
+      <Column Name="itemsCount" Member="ItemsCount" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="fe32c960-b478-4ccc-9a22-acd48ef3bcd8" />
+      <Column Name="total" Member="Total" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="7d85023b-eb8f-41ab-8e8c-edb6f6791f4c" />
+      <Column Name="propina" Member="Propina" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="de9d6acc-1703-487b-9a1a-aba0d81d18e8" />
+      <Column Name="isDayOut" Member="IsDayOut" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="1a617b29-a2f3-4856-bb52-815ba0e53803" />
+      <Column Name="terminalId" Member="TerminalId" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="6bbef0b0-10f2-4cfa-9950-96eb2dc25792" />
+      <Column Name="paid" Member="Paid" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="79443a45-9182-46c6-9b03-c94f1fb2696d" />
+      <Column Name="canceled" Member="Canceled" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f6f2f862-0e93-4331-911d-77d994f4e49e" />
+      <Column Name="paidType" Member="PaidType" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9b28cee4-5f56-4499-9940-c23a16cf0f38" />
+      <Column Name="personalID" Member="PersonalID" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4eed5230-6f68-49b7-8497-720b6dd45d7b" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.personal" Member="Personals">
+    <Type Name="Personal" ed:Guid="9c697ae7-04fc-431f-a32f-577b3628ce6b">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="f8e62672-ad74-4753-bf66-6b431b6f0de5" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0dd0b460-f665-4b2c-ad21-46cb50071d4d" />
+      <Column Name="icon" Member="Icon" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="91f6c600-5e15-4cc6-820b-7d681dd307d8" />
+      <Column Name="color" Member="Color" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="94b64e1d-9019-4c0d-82d4-84a294219db3" />
+      <Column Name="isAdmin" Member="IsAdmin" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b05481b9-e37c-477f-b0f5-606bac140abc" />
+      <Column Name="pass" Member="Pass" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3785cfc8-3aae-4e40-80d2-d1b0247c3fb1" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.cierres" Member="Cierres">
+    <Type Name="Cierre" ed:Guid="0b5f3245-7b79-4beb-a396-b9de6ee09166">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="ecaceeaf-a9d5-4058-94f1-23a4d454664e" />
+      <Column Name="fecha" Member="Fecha" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3c3bc3e2-cce3-4c30-9ef2-278aca0384e4" />
+      <Column Name="total" Member="Total" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8958ae04-0bdb-4b6e-b6c2-a1994efaeaf0" />
+      <Column Name="propina" Member="Propina" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="58ed7f43-1cf5-4f16-b7b7-46c53e25788f" />
+      <Column Name="totalEfectivo" Member="TotalEfectivo" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e9a3e5ea-9f14-4547-b2c0-83db09826efb" />
+      <Column Name="totalTBK" Member="TotalTBK" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="73c0efa8-231f-4c87-8d48-dcf05a3c87ea" />
+      <Column Name="totalTransferencia" Member="TotalTransferencia" Type="System.Decimal" DbType="NUMERIC" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4445b371-46ba-4db2-9224-5ead1ca88941" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.tables" Member="Tables">
+    <Type Name="Table" ed:Guid="0c3c7444-d6ff-4bc0-856e-b48aa5497ac8">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="b9718609-f851-45c2-9ad1-5ee57cb59ed3" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d84dc9c9-ef7b-4252-ac4d-b1735e88f660" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3160f624-3bd4-425d-976e-13f11c002e7c" />
+      <Column Name="capacity" Member="Capacity" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e6a0ba84-5618-4b65-9343-a04c13298fdd" />
+      <Column Name="visible" Member="Visible" Type="System.Int64" DbType="INTEGER" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="bf15376f-c23d-436b-87d9-926e429c71b3" />
+      <Column Name="color" Member="Color" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="188edb98-2cca-4038-b069-34392fe16df2" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.config" Member="Configs">
+    <Type Name="Config" ed:Guid="7a53932d-5241-405f-904c-a87d85ec30f0">
+      <Column Name="id" Member="Id" Type="System.Int64" AutoSync="OnInsert" DbType="INTEGER NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="7c2c8318-ed95-460f-a276-5e4a786b412f" />
+      <Column Name="property" Member="Property" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e068a0fd-6bed-46fc-9741-2966c0609ea5" />
+      <Column Name="value" Member="Value" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="fbe8c7a7-dc99-4e14-ad0b-6a1e95ad5d5e" />
+    </Type>
+  </Table>
+</Database>

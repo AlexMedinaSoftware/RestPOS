@@ -1,0 +1,170 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestPOS"
+        mc:Ignorable="d"
+        Title="Simple." Height="768" Width="1366" WindowStyle="None" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary x:Name="Recursos" Source="/Assets/Icons.xaml"/>
+    </Window.Resources>
+    <Grid Background="#0E0E0E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Popup x:Name="PopupWindow" Width="800" Height="600" Placement="Center" IsOpen="False" StaysOpen="True" VerticalAlignment="Center" HorizontalAlignment="Center" AllowsTransparency="True"  >
+            <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="750" Height="450" Background="#414246" CornerRadius="10,10,10,10">
+                <Border.Effect>
+                    <DropShadowEffect Direction="0" ShadowDepth="0" Opacity="0.5" BlurRadius="16"/>
+                </Border.Effect>
+                <Grid>
+                    <Border VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="50" Background="#2E2F33" CornerRadius="10,10,0,0" Padding="10,0,0,0">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+                            <Grid x:Name="PopupClose" VerticalAlignment="Center" HorizontalAlignment="Left" Width="24" Height="24">
+                                <Image Source="{StaticResource Close}"/>
+                            </Grid>
+                            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="600">
+                                <Label x:Name="PopupTitle" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Content="HOLA" FontSize="24" FontFamily="/RestPOS;component/Fonts/#Roboto"></Label>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <Border x:Name="PYesBtn" Visibility="Visible" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,20"  Width="140" Height="50" CornerRadius="10" Background="{DynamicResource ButtonColor}">
+                        <TextBlock Text="Aceptar" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    </Border>
+                    <Border x:Name="PNoBtn" Visibility="Visible" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,175,20"  Width="140" Height="50" CornerRadius="10" Background="{DynamicResource ButtonColor}">
+                        <TextBlock Text="Cancelar" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    </Border>
+                    <Border x:Name="PCenterBtn" Visibility="Visible" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,20"  Width="200" Height="50" CornerRadius="10" Background="{DynamicResource ButtonColor}">
+                        <TextBlock Text="Aceptar" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Popup>
+        <Popup x:Name="PopupPago" Placement="Center" IsOpen="False" StaysOpen="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" AllowsTransparency="True">
+            <Grid Width="1100" Height="725">
+                <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="1000" Height="625" Background="{DynamicResource DarkColor2}" CornerRadius="10,10,10,10">
+                    <Border.Effect>
+                        <DropShadowEffect Direction="0" ShadowDepth="0" Opacity="0.5" BlurRadius="16"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Border VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="50" Background="#FF1B1B1B" CornerRadius="10,10,0,0" Padding="10,0,0,0">
+                            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+                                <Grid x:Name="PopupPagoClose" VerticalAlignment="Center" HorizontalAlignment="Left" Width="24" Height="24">
+                                    <Image Source="{StaticResource Close}"/>
+                                </Grid>
+                                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="600">
+                                    <Label x:Name="PopupPagoTitle" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Content="PAGAR CUENTA" FontSize="24" FontFamily="/RestPOS;component/Fonts/#Roboto"></Label>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Grid Margin="0,50,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="353*"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="170"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Margin="5">
+                                <DataGrid x:Name="PopUpPago_ListaPedido" Style="{DynamicResource table}" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Background="White">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="ID" Width="50" TextBlock.TextAlignment="Center" Binding="{Binding P_Item_ID}" />
+                                        <DataGridTextColumn Header="CANT" Width="80" TextBlock.TextAlignment="Center" Binding="{Binding P_Item_Cantidad}" />
+                                        <DataGridTextColumn Header="PRODUCTO" FontStyle="Italic" Width="*" Binding="{Binding P_Item_Nombre}" />
+                                        <DataGridTextColumn Header="PRECIO" Width="100" TextBlock.TextAlignment="Right" Binding="{Binding P_Item_Precio}" />
+                                        <DataGridTextColumn Header="TOTAL" Width="100" TextBlock.TextAlignment="Right" Binding="{Binding P_Item_Total}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Margin="10,5,10,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="196"/>
+                                    <ColumnDefinition Width="196"/>
+                                    <ColumnDefinition Width="196"/>
+                                    <ColumnDefinition Width="196"/>
+                                    <ColumnDefinition Width="196"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Background="{DynamicResource DarkColor1}" Grid.ColumnSpan="5" CornerRadius="5"></Border>
+                                <Grid Grid.Column="0" Margin="10,5,5,5">
+                                    <TextBlock x:Name="PopUpPago_lblMesa" Text="Mesa: 10" Foreground="{DynamicResource TextColor}" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Grid>
+                                <Grid Grid.Column="1" Margin="5">
+                                    <TextBlock x:Name="PopUpPago_lblTipoPago" Text="Tipo: Efectivo" Foreground="{DynamicResource TextColor}" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Grid>
+                                <Grid Grid.Column="2" Margin="5">
+                                    <TextBlock x:Name="PopUpPago_lblSubtotal" Text="Subtotal: $0" Foreground="{DynamicResource TextColor}" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Grid>
+                                <Grid Grid.Column="3" Margin="5,5,10,5">
+                                    <TextBlock x:Name="PopUpPago_lblPropina" Text="Propina: $0" Foreground="{DynamicResource TextColor}" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Grid>
+                                <Grid Grid.Column="4" Margin="5,5,10,5">
+                                    <TextBlock x:Name="PopUpPago_lblTotal" Text="Total: $0" Foreground="{DynamicResource TextColor}" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="/RestPOS;component/Fonts/#Roboto Black"/>
+                                </Grid>
+
+                            </Grid>
+
+                            <Grid Grid.Row="2" Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80"/>
+                                    <RowDefinition Height="80"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="198"/>
+                                    <ColumnDefinition Width="198"/>
+                                    <ColumnDefinition Width="198"/>
+                                    <ColumnDefinition Width="198"/>
+                                    <ColumnDefinition Width="198"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border x:Name="PrintRecibo" Grid.Row="0" CornerRadius="5" Grid.Column="0" Margin="5" Background="{DynamicResource Color4}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Imprimir recibo" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border x:Name="PopUpPago_btnEfectivo" Grid.Row="1" CornerRadius="5" Grid.Column="0" Margin="5" Background="{DynamicResource Color3}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Efectivo" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border Grid.Row="0" CornerRadius="5" Grid.Column="1" Margin="5" Background="{DynamicResource Color4}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Dividir cuenta" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border x:Name="PopUpPago_btnTBK" Grid.Row="1" CornerRadius="5" Grid.Column="1" Margin="5" Background="{DynamicResource Color2}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Transbank" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border x:Name="PopUpPago_AddDelivery" Grid.Row="0" CornerRadius="5" Grid.Column="2" Margin="5" Background="{DynamicResource Color4}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Cargo delivery" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border x:Name="PopUpPago_btnTransferencia" Grid.Row="1" CornerRadius="5" Grid.Column="2" Margin="5" Background="{DynamicResource Color2}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Transferencia" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border x:Name="PopUpPago_AddPropina" Grid.Row="0" CornerRadius="5" Grid.Column="3" Margin="5" Background="{DynamicResource Color4}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock x:Name="lbl_Propina" Text="Aplicar propina" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border Grid.Row="1" CornerRadius="5" Grid.Column="3" Margin="5" Background="{DynamicResource Color4}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Canjear" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                                <Border x:Name="PopUpPago_Pay" Grid.Row="0" CornerRadius="5" Grid.Column="4" Grid.RowSpan="2" Margin="5" Background="{DynamicResource Color1}" Style="{DynamicResource HoverPass}">
+                                    <TextBlock Text="Pagar cuenta" Foreground="{DynamicResource TextColor}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Popup>
+        <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid DockPanel.Dock="Top" Height="50" HorizontalAlignment="Stretch" Background="#FF1B1B1B">
+                <Grid x:Name="ShutDown_btn" VerticalAlignment="Center" HorizontalAlignment="Right" Width="36" Height="36" Margin="7,0,7,0">
+                    <Image x:Name="ShutdownIcon" Source="{StaticResource PowerShutdown}"/>
+                </Grid>
+                <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="1200" Height="36" Margin="7,0,7,0">
+                    <Label x:Name="Titulo" Content="Simple." Foreground="{DynamicResource TextColor}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="/RestPOS;component/Fonts/#Roboto"/>
+                </Grid>
+                <Label x:Name="TextoReloj" Content="00:00:00" Foreground="{DynamicResource TextColor}" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Margin="7,0,0,0" FontFamily="/RestPOS;component/Fonts/#Roboto" Height="50"></Label>
+
+            </Grid>
+            <Grid DockPanel.Dock="Left" Width="50" VerticalAlignment="Stretch" Background="Blue" Visibility="Collapsed">
+
+            </Grid>
+            <Grid DockPanel.Dock="Right" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFBDBDBD">
+                <Frame HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden"  x:Name="MainFrame"/>
+            </Grid>
+
+        </DockPanel>
+        <Border x:Name="OverlayPopUp" Visibility="Hidden" Background="Black" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="0.9"/>
+    </Grid>
+</Window>

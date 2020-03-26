@@ -1,0 +1,60 @@
+﻿<Page x:Class="AdminPass"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RestPOS"
+      mc:Ignorable="d" 
+      d:DesignHeight="710" d:DesignWidth="1358"
+      Title="Login">
+    <Page.Resources>
+        <ResourceDictionary x:Name="Recursos" Source="/assets/icons.xaml"/>
+    </Page.Resources>
+    <Grid Background="{DynamicResource BackgroundColor}">
+        <Image x:Name="BackKey" Source="{DynamicResource Atras}" Width="30" Height="30" Margin="20,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Image Source="{DynamicResource SimpleLogo}" Width="150" VerticalAlignment="Top" Margin="0,20,0,0"></Image>
+        <UniformGrid Width="200" Height="20" VerticalAlignment="Center" Margin="0,-380,0,0" Columns="4" Rows="1" HorizontalAlignment="Center" >
+            <Border x:Name="PassBall_1" Background="{DynamicResource ButtonColorDark}" BorderBrush="{DynamicResource ButtonColor}" BorderThickness="1" Width="20" Height="20" CornerRadius="20" Opacity="0.7"></Border>
+            <Border x:Name="PassBall_2" Background="{DynamicResource ButtonColorDark}" BorderBrush="{DynamicResource ButtonColor}" BorderThickness="1" Width="20" Height="20" CornerRadius="20" Opacity="0.7"></Border>
+            <Border x:Name="PassBall_3" Background="{DynamicResource ButtonColorDark}" BorderBrush="{DynamicResource ButtonColor}" BorderThickness="1" Width="20" Height="20" CornerRadius="20" Opacity="0.7"></Border>
+            <Border x:Name="PassBall_4" Background="{DynamicResource ButtonColorDark}" BorderBrush="{DynamicResource ButtonColor}" BorderThickness="1" Width="20" Height="20" CornerRadius="20" Opacity="0.7"></Border>
+        </UniformGrid>
+        <UniformGrid x:Name="Cards" Rows="4" Columns="3" VerticalAlignment="Center" Width=" 600" Height="500" Margin="0,150,0,0">
+            <Border x:Name="PassButton_7" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_8" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_9" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_4" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_5" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_6" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_1" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_2" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_3" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border Margin="10,10,10,10" CornerRadius="5"></Border>
+            <Border x:Name="PassButton_0" Background="{DynamicResource ButtonColorDark}" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" IsHitTestVisible="False" Foreground="{DynamicResource ButtonColor}"></Label>
+            </Border>
+            <Border x:Name="PassButton_Del" Margin="10,10,10,10" CornerRadius="5" Style="{DynamicResource HoverPass}">
+                <Label x:Name="PassButton_Del2" Content="Borrar" Foreground="{DynamicResource ButtonColor}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/RestPOS;component/Fonts/#Roboto" FontSize="20"/>
+            </Border>
+        </UniformGrid>
+        <TextBox x:Name="KeyGet" Width="10" Height="10" Margin="0,0,-20,-20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}" ></TextBox>
+    </Grid>
+</Page>

@@ -1,0 +1,24 @@
+﻿<Page x:Class="Mesas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:RestPOS"
+      mc:Ignorable="d"
+      d:DesignHeight="710" d:DesignWidth="1358"
+      Title="Login">
+    <Page.Resources>
+        <ResourceDictionary x:Name="Recursos" Source="/assets/icons.xaml" />
+    </Page.Resources>
+    <Grid Background="{DynamicResource BackgroundColor}">
+        <Grid x:Name="BackKey" Height="80" Width="170" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Image Source="{DynamicResource Atras}" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Label Content="Atras" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="{DynamicResource TextColor}" FontFamily="/RestPOS;component/Fonts/#Roboto"></Label>
+        </Grid>
+        <Image Source="{DynamicResource SimpleLogo}" Width="150" VerticalAlignment="Top" Margin="0,20,0,0"></Image>
+        <ScrollViewer HorizontalAlignment="Stretch" Margin="100,100,100,0" Height="500" ScrollViewer.VerticalScrollBarVisibility="Auto"  VerticalAlignment="Center">
+            <UniformGrid x:Name="Cards" Rows="3" Columns="6">
+            </UniformGrid>
+        </ScrollViewer>
+    </Grid>
+</Page>
