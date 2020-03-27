@@ -145,7 +145,7 @@ Class Dash_Config
     Private Function GetConfigText(key As String) As String
         Dim tempvalue As String = String.Empty
         For Each grid_ As Grid In Configs_Grid.Children
-            If tempvalue = String.Empty Then
+            If String.IsNullOrEmpty(tempvalue) Then
                 For Each item In grid_.Children
                     If item.GetType = GetType(TextBox) Then
                         Dim TextBoxConfig As TextBox = item
