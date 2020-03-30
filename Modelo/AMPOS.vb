@@ -497,6 +497,21 @@ Module AMPOS
         Return templist
     End Function
 
+    Function GetAllTickets() As List(Of MainContext.Ticket)
+        Dim templist As New List(Of MainContext.Ticket)
+
+        Dim query = From it In context.Tickets
+                    Select it
+
+        If query.Any Then
+            For Each ticket As MainContext.Ticket In query
+                templist.Add(ticket)
+            Next
+        End If
+
+        Return templist
+    End Function
+
 #End Region
 
 #Region "MODIFIERS"

@@ -188,6 +188,7 @@
     <Compile Include="Modelo\Mesas.vb" />
     <Compile Include="Modelo\Mods.vb" />
     <Compile Include="Modelo\NewMenu.vb" />
+    <Compile Include="Modelo\Pantalla.vb" />
     <Compile Include="Paginas\Admin\DashPages\Configuracion\Dash_Config.xaml.vb">
       <DependentUpon>Dash_Config.xaml</DependentUpon>
     </Compile>
@@ -199,6 +200,9 @@
     </Compile>
     <Compile Include="Paginas\Admin\DashPages\Productos\Detalle_Productos.xaml.vb">
       <DependentUpon>Detalle_Productos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Admin\DashPages\Reportes\Dash_Reportes_Items.xaml.vb">
+      <DependentUpon>Dash_Reportes_Items.xaml</DependentUpon>
     </Compile>
     <Compile Include="Voucher\Data\VoucherCierre.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -278,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\Admin\DashPages\Productos\Detalle_Productos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Admin\DashPages\Reportes\Dash_Reportes_Items.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -443,7 +451,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Paginas\Admin\DashPages\Reportes\" />
     <Folder Include="Paginas\Admin\DashPages\Usuarios\" />
   </ItemGroup>
   <ItemGroup>

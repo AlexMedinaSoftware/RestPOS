@@ -2837,3 +2837,4 @@
 [23-03-2020 2:54:25] El objeto que acepta valores Null debe tener un valor. (   en System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
    en System.Nullable`1.get_Value()
    en RestPOS.Detalle_Productos.LoadPopUpProduct() en C:\Users\AlexMedina\source\repos\RestPOS\RestPOS\Paginas\Admin\DashPages\Productos\Detalle_Productos.xaml.vb:línea 344)
+[30-03-2020 3:51:03] No se permite 'EditItem' para esta vista.

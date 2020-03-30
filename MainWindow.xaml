@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RestPOS"
         mc:Ignorable="d"
-        Title="Simple." Height="768" Width="1366" WindowStyle="None" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="Simple." Height="768" Width="1366" MinHeight="720" MinWidth="1280" WindowStyle="None" WindowState="Maximized" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary x:Name="Recursos" Source="/Assets/Icons.xaml"/>
     </Window.Resources>
-    <Grid Background="#0E0E0E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    <Grid Background="{DynamicResource BackgroundColor}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <Popup x:Name="PopupWindow" Width="800" Height="600" Placement="Center" IsOpen="False" StaysOpen="True" VerticalAlignment="Center" HorizontalAlignment="Center" AllowsTransparency="True"  >
             <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="750" Height="450" Background="#414246" CornerRadius="10,10,10,10">
                 <Border.Effect>
@@ -160,8 +160,8 @@
             <Grid DockPanel.Dock="Left" Width="50" VerticalAlignment="Stretch" Background="Blue" Visibility="Collapsed">
 
             </Grid>
-            <Grid DockPanel.Dock="Right" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFBDBDBD">
-                <Frame HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden"  x:Name="MainFrame"/>
+            <Grid DockPanel.Dock="Right" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{DynamicResource BackgroundColor}">
+                <Frame Navigating="frame_Navigating" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden"  x:Name="MainFrame" />
             </Grid>
 
         </DockPanel>

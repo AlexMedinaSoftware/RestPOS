@@ -1,4 +1,6 @@
 ﻿Imports System.Globalization
+Imports System.Threading
+Imports System.Windows.Media.Animation
 Imports System.Windows.Threading
 
 Class MainWindow
@@ -165,4 +167,92 @@ Class MainWindow
     Private Sub MainWindow_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         'Topmost = True
     End Sub
+
+    Private Sub MainFrame_OnNavigating(ByVal sender As Object, ByVal e As NavigatingCancelEventArgs)
+        Dim ta As New ThicknessAnimation With {
+            .Duration = TimeSpan.FromMilliseconds(300),
+            .DecelerationRatio = 0.7
+        }
+
+        If e.NavigationMode = NavigationMode.[New] Then
+            ta.From = New Thickness(2000, 0, -2000, 0)
+            ta.To = New Thickness(0, 0, 0, 0)
+        ElseIf e.NavigationMode = NavigationMode.Back Then
+            ta.From = New Thickness(-2000, 0, 2000, 0)
+            ta.To = New Thickness(0, 0, 0, 0)
+        End If
+
+        TryCast(e.Content, Page).BeginAnimation(MarginProperty, ta)
+    End Sub
+
+    Private _allowDirectNavigation As Boolean = False
+    Private _navArgs As NavigatingCancelEventArgs = Nothing
+    Private _duration As Duration = New Duration(TimeSpan.FromMilliseconds(300))
+    Private ScreenMargin As Double = SystemParameters.PrimaryScreenWidth
+
+    Private Sub frame_Navigating(ByVal sender As Object, ByVal e As NavigatingCancelEventArgs)
+        Try
+            If GetConfig("AnimacionesActivas") = 1 Then
+                ScreenMargin = SystemParameters.PrimaryScreenWidth
+                If Content IsNot Nothing AndAlso Not _allowDirectNavigation Then
+                    e.Cancel = True
+                    _navArgs = e
+                    Dim animation0 As ThicknessAnimation = New ThicknessAnimation()
+                    animation0.From = New Thickness(0, 0, 0, 0)
+                    animation0.[To] = New Thickness(-ScreenMargin, 0, ScreenMargin, 0)
+                    animation0.Duration = _duration
+                    animation0.DecelerationRatio = 0.7
+                    AddHandler animation0.Completed, AddressOf SlideCompleted
+                    MainFrame.BeginAnimation(MarginProperty, animation0)
+                End If
+
+                _allowDirectNavigation = False
+            ElseIf GetConfig("AnimacionesActivas") = 2 Then
+                MainFrame_OnNavigating(sender, e)
+            End If
+        Catch ex As Exception
+            LogError(ex)
+        End Try
+    End Sub
+
+    Private Sub SlideCompleted(ByVal sender As Object, ByVal e As EventArgs)
+        _allowDirectNavigation = True
+
+        Select Case _navArgs.NavigationMode
+            Case NavigationMode.[New]
+
+                If _navArgs.Uri Is Nothing Then
+                    MainFrame.Navigate(_navArgs.Content)
+                Else
+                    MainFrame.Navigate(_navArgs.Uri)
+                End If
+
+            Case NavigationMode.Back
+                MainFrame.GoBack()
+            Case NavigationMode.Forward
+                MainFrame.GoForward()
+            Case NavigationMode.Refresh
+                MainFrame.Refresh()
+        End Select
+
+        Dispatcher.BeginInvoke(DispatcherPriority.Loaded, CType(Function()
+                                                                    Dim animation0 As ThicknessAnimation = New ThicknessAnimation With {
+                                                                        .From = New Thickness(ScreenMargin, 0, -ScreenMargin, 0),
+                                                                        .To = New Thickness(0, 0, 0, 0),
+                                                                        .Duration = _duration,
+                                                                        .DecelerationRatio = 0.7
+                                                                    }
+                                                                    MainFrame.BeginAnimation(MarginProperty, animation0)
+                                                                End Function, ThreadStart))
+    End Sub
+
+    Private Sub MainWindow_SizeChanged(sender As Object, e As SizeChangedEventArgs) Handles Me.SizeChanged
+        AjustarEscalaProductos()
+    End Sub
+
+    Private Sub MainWindow_StateChanged(sender As Object, e As EventArgs) Handles Me.StateChanged
+        AjustarEscalaProductos()
+    End Sub
+
+
 End Class

@@ -7,7 +7,7 @@ Class Dash_Config
     Private Sub AgregarConfig(Key As String, Value As String)
 
         Dim GridPrincipal As New Grid With {
-            .Width = 500,
+            .Width = 700,
             .Height = 50,
             .Margin = New Thickness(5)
         }
@@ -32,7 +32,7 @@ Class Dash_Config
             .Width = 200,
             .Height = 40,
             .HorizontalAlignment = HorizontalAlignment.Left,
-            .Margin = New Thickness(165, 0, 0, 0),
+            .Margin = New Thickness(365, 0, 0, 0),
             .Style = GetResource("RoundTextBox"),
             .Tag = Key,
             .Text = Value
@@ -42,7 +42,7 @@ Class Dash_Config
             .Width = 120,
             .Height = 40,
             .HorizontalAlignment = HorizontalAlignment.Left,
-            .Margin = New Thickness(375, 0, 0, 0),
+            .Margin = New Thickness(575, 0, 0, 0),
             .IsEnabled = False,
             .Style = GetResource("ConfigEnable"),
             .Tag = Key

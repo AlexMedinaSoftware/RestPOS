@@ -7,6 +7,7 @@
     End Sub
 
     Private Sub DetalleMesa_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
+        AjustarEscalaProductos()
         ListaPedido.Items.Clear()
         ListaPedido.BringIntoView()
         LoadCats()
@@ -208,4 +209,5 @@
         CodigoMesaActual = idmesa
         LabelMesa.Content = GetTableObject(CodigoMesaActual).Name
     End Sub
+
 End Class

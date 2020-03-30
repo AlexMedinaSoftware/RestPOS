@@ -228,11 +228,6 @@
 
 #End Region
 
-    Shared Function ScreenMultiplicator() As Double
-        Dim screenWidth As Integer = SystemParameters.PrimaryScreenWidth
-        Dim screenHeight As Integer = SystemParameters.PrimaryScreenHeight
-        Return ((screenWidth / 1366) + (screenHeight / 768)) / 2
-    End Function
     Private Sub Item_Click(sender As Object, e As EventArgs)
         For Each item As Border In Grid_Prods.Children
             item.Style = GetResource("Dash_Item_Border")

@@ -13,14 +13,14 @@
     <DockPanel Background="{DynamicResource BackgroundColor}">
         <Grid x:Name="OptionsBar" Height="80" DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition MinWidth="400" />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition MinWidth="100" MaxWidth="135"/>
+                <ColumnDefinition MinWidth="100" MaxWidth="135" />
+                <ColumnDefinition MinWidth="100" MaxWidth="135"/>
+                <ColumnDefinition MinWidth="100"/>
+                <ColumnDefinition MinWidth="100" MaxWidth="135"/>
+                <ColumnDefinition MinWidth="100" MaxWidth="135"/>
+                <ColumnDefinition MinWidth="100" MaxWidth="135"/>
+                <ColumnDefinition MinWidth="100" MaxWidth="135"/>
             </Grid.ColumnDefinitions>
             <Grid x:Name="BackKey" Grid.Column="0" Style="{DynamicResource HoverMenu}">
                 <Grid Height="55">
@@ -128,10 +128,9 @@
         <UniformGrid x:Name="Categories" Rows="1" HorizontalAlignment="Left">
         </UniformGrid>
         </Grid>
-        <Grid DockPanel.Dock="Right" Width="650" Background="{DynamicResource DarkColor1}">
+        <Grid DockPanel.Dock="Right" Width="600" Background="{DynamicResource DarkColor1}">
             <DataGrid x:Name="ListaPedido" Style="{DynamicResource table}" RowDetailsVisibilityMode="Collapsed" CanUserAddRows="False" CanUserDeleteRows="False" ScrollViewer.CanContentScroll="False" CanUserReorderColumns="False" Background="White" Margin="0,0,0,60">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Width="60" TextBlock.TextAlignment="Center" Binding="{Binding P_Item_ID}" />
                     <DataGridTextColumn Header="QNT" Width="60" TextBlock.TextAlignment="Center" Binding="{Binding P_Item_Cantidad}" />
                     <DataGridTextColumn Header="PRODUCTO" FontStyle="Italic" Width="*" Binding="{Binding P_Item_Nombre}" />
                     <DataGridTextColumn Header="PRECIO" Width="100" TextBlock.TextAlignment="Right" Binding="{Binding P_Item_Precio}" />

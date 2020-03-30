@@ -249,21 +249,6 @@ RestPOS
  There are no comments for PrinterName in the schema.
  </summary>
 </member>
-<member name="T:RestPOS.MainContext.Config">
- <summary>
- There are no comments for MainContext.Config in the schema.
- </summary>
-</member>
-<member name="P:RestPOS.MainContext.Config.Property">
- <summary>
- There are no comments for Property in the schema.
- </summary>
-</member>
-<member name="P:RestPOS.MainContext.Config.Value">
- <summary>
- There are no comments for Value in the schema.
- </summary>
-</member>
 <member name="T:RestPOS.MainContext.Modifier">
  <summary>
  There are no comments for MainContext.Modifier in the schema.
@@ -474,6 +459,36 @@ RestPOS
  There are no comments for Color in the schema.
  </summary>
 </member>
+<member name="T:RestPOS.MainContext.Config">
+ <summary>
+ There are no comments for MainContext.Config in the schema.
+ </summary>
+</member>
+<member name="P:RestPOS.MainContext.Config.Id">
+ <summary>
+ There are no comments for Id in the schema.
+ </summary>
+</member>
+<member name="P:RestPOS.MainContext.Config.Property">
+ <summary>
+ There are no comments for Property in the schema.
+ </summary>
+</member>
+<member name="P:RestPOS.MainContext.Config.Value">
+ <summary>
+ There are no comments for Value in the schema.
+ </summary>
+</member>
+<member name="T:RestPOS.Dash_Config">
+<summary>
+Dash_Config
+</summary>
+</member>
+<member name="M:RestPOS.Dash_Config.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:RestPOS.Dash_Dashboard">
 <summary>
 Dash_Dashboard
@@ -482,6 +497,56 @@ Dash_Dashboard
 <member name="M:RestPOS.Dash_Dashboard.InitializeComponent">
 <summary>
 InitializeComponent
+</summary>
+</member>
+<member name="T:RestPOS.Dash_Mesas">
+<summary>
+Dash_Mesas
+</summary>
+</member>
+<member name="M:RestPOS.Dash_Mesas.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:RestPOS.Detalle_Productos">
+<summary>
+Detalle_Productos
+</summary>
+</member>
+<member name="M:RestPOS.Detalle_Productos.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:RestPOS.Dash_Reportes_Items">
+<summary>
+Dash_Reportes_Items
+</summary>
+</member>
+<member name="M:RestPOS.Dash_Reportes_Items.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:RestPOS.VoucherCierre">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RestPOS.VoucherCierre.VentasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RestPOS.VoucherCierre.VentasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RestPOS.VoucherCierre.VentasRowChangeEvent">
+<summary>
+Row event argument class
 </summary>
 </member>
 <member name="T:RestPOS.VoucherRecibo">
@@ -509,8 +574,6 @@ Row event argument class
  Print rdlc report with custom page width and height
  </summary>
  <param name="report"></param>
- <param name="page_width">the width of the papger, in hunderdths of an inch</param>
- <param name="page_height">the height of the papger, in hunderdths of an inch</param>
  <param name="islandscap"></param>
  <param name="printer_name">Ignore this parameter to use default printer</param>
  <remarks></remarks>

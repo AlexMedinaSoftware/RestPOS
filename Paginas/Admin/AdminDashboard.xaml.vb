@@ -175,6 +175,8 @@
                 Page_Dash_Detalle_Productos.ShowCategories(GetCategories)
             Case SubCat.ProductosModificadores
                 Page_Dash_Detalle_Productos.ShowMods(GetModifiers)
+            Case SubCat.ReportesTickets
+                DashActual = Page_Dash_Reportes_Items
         End Select
     End Sub
 

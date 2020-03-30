@@ -11,13 +11,14 @@
     <Page.Resources>
         <ResourceDictionary x:Name="Recursos" Source="/assets/icons.xaml"/>
     </Page.Resources>
+
     <Grid Background="{DynamicResource BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <Image Source="{DynamicResource SimpleLogo}" Width="150" VerticalAlignment="Top" Margin="604,20,604,0"></Image>
+        <Image Source="{DynamicResource SimpleLogo}" Width="150" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"></Image>
         <ScrollViewer HorizontalAlignment="Stretch" Margin="100,155,100,55" Height="500" ScrollViewer.VerticalScrollBarVisibility="Auto"  VerticalAlignment="Center" Grid.RowSpan="2">
             <UniformGrid x:Name="Cards" VerticalAlignment="Center" Rows="3" Columns="6">
             </UniformGrid>

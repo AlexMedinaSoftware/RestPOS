@@ -81,8 +81,11 @@
 
             If tempUsers.Count < 6 Then
                 Page_Login.Cards.Columns = tempUsers.Count
+                Page_Login.Cards.Rows = 1
+            Else
+                Page_Login.Cards.Columns = 6
+                Page_Login.Cards.Rows = Math.Ceiling(tempUsers.Count / 6)
             End If
-            Page_Login.Cards.Rows = Math.Ceiling(tempUsers.Count / 6)
 
             For Each user In tempUsers
                 If user.IsAdmin = 0 Then

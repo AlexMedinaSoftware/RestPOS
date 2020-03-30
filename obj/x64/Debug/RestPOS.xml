@@ -519,6 +519,16 @@ Detalle_Productos
 InitializeComponent
 </summary>
 </member>
+<member name="T:RestPOS.Dash_Reportes_Items">
+<summary>
+Dash_Reportes_Items
+</summary>
+</member>
+<member name="M:RestPOS.Dash_Reportes_Items.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:RestPOS.VoucherCierre">
 <summary>
 Represents a strongly typed in-memory cache of data.

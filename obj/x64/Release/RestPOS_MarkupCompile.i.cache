@@ -10,11 +10,11 @@ none
 false
 
 C:\Users\AlexMedina\source\repos\RestPOS\RestPOS\Application.xaml
-9-2063198080
+12-1990470786
 
-301194384579
+35-1966483622
 35402007625
-Assets\Icons.xaml;MainWindow.xaml;Paginas\Admin\AdminDashboard.xaml;Paginas\Admin\AdminPass.xaml;Paginas\Admin\DashPages\Dashboard\Dash_Dashboard.xaml;Paginas\Mesas\DetalleMesa.xaml;Paginas\Login\Login.xaml;Paginas\Mesas\Mesas.xaml;Splash.xaml;
+Assets\Icons.xaml;MainWindow.xaml;Paginas\Admin\AdminDashboard.xaml;Paginas\Admin\AdminPass.xaml;Paginas\Admin\DashPages\Configuracion\Dash_Config.xaml;Paginas\Admin\DashPages\Dashboard\Dash_Dashboard.xaml;Paginas\Admin\DashPages\Mesas\Dash_Mesas.xaml;Paginas\Admin\DashPages\Productos\Detalle_Productos.xaml;Paginas\Mesas\DetalleMesa.xaml;Paginas\Login\Login.xaml;Paginas\Mesas\Mesas.xaml;Splash.xaml;
 
 True
 
